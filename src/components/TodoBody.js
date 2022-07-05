@@ -3,6 +3,7 @@ import AppContext from '../store/AppContext';
 import Card from './Card';
 import './TodoBody.css';
 import TodoListItem from './TodoListItem';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 export default function TodoBody() {
    const {
@@ -34,15 +35,19 @@ export default function TodoBody() {
          />
       ));
 
+   const dragEndHandler = () => {};
+
    return (
       <Fragment>
          <Card className="todo-body">
-            <ul className="todo-list">
-               {(filter === 'all' || filter === 'completed') &&
-                  completedListItems}
-               {(filter === 'all' || filter === 'active') &&
-                  uncompleteListItems}
-            </ul>
+            <DragDropContext onDragEnd={dragEndHandler}>
+               <ul className="todo-list">
+                  {(filter === 'all' || filter === 'completed') &&
+                     completedListItems}
+                  {(filter === 'all' || filter === 'active') &&
+                     uncompleteListItems}
+               </ul>
+            </DragDropContext>
             <div className="actions">
                <p className="items-left">{`${uncompleteListItems.length} items left`}</p>
                <div className="filter">
