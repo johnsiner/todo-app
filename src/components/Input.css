@@ -1,0 +1,40 @@
+.todo-form {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   padding-inline: 20px;
+   height: 60px;
+}
+
+
+.todo-form div {
+   height: 25px;
+   aspect-ratio: 1;
+   border-radius: 50%;
+   border: 1px solid hsl(233, 11%, 84%);
+   margin-right: 20px;
+}
+
+#dark .todo-form div {
+   border: 1px solid hsl(233, 14%, 35%);
+}
+
+.todo-form input {
+   border: none;
+   width: 100%;
+}
+
+#dark .todo-form input {
+   background-color: hsl(235, 24%, 19%);
+   color: hsl(234, 39%, 85%);
+}
+
+.todo-form input:focus,
+input:active {
+   outline: none;
+}
+
+.todo-form input::placeholder {
+   color: hsl(236, 9%, 61%);
+}

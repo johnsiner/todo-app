@@ -1,0 +1,15 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 40px;
+}
+
+.header h1 {
+   color: white;
+   font-weight: 700;
+   letter-spacing: 10px;
+}
+
+.header img:hover {
+   cursor: pointer;
+}

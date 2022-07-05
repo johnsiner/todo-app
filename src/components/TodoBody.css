@@ -1,0 +1,96 @@
+.todo-body {
+   margin-top: 25px;
+   border-radius: 5px;
+   animation: todo-appear 1s ease-out forwards;
+}
+
+.mobile.filter {
+   display: none;
+}
+
+.todo-list {
+   padding: 0;
+   margin: 0;
+   border-radius: 5px;
+}
+
+.actions {
+   display: flex;
+   height: 50px;
+   font-size: 13px;
+   color: hsl(233, 11%, 84%);
+   justify-content: space-between;
+   align-items: center;
+   padding-inline: 20px;
+}
+
+#dark .actions {
+   color: hsl(233, 14%, 35%);
+}
+
+.filter {
+   display: flex;
+}
+
+.filter p:not(:last-child) {
+   padding-right: 10px;
+}
+
+.filter p:hover {
+   cursor: pointer;
+   color: hsl(235, 19%, 35%);
+}
+
+#dark .filter p:hover {
+   color: hsl(234, 39%, 85%);
+}
+
+#light .filter p.selected-filter,
+#dark .filter p.selected-filter {
+   color: hsl(220, 98%, 61%);
+}
+
+.clear-completed:hover {
+   cursor: pointer;
+   color: hsl(235, 19%, 35%);
+}
+
+#dark .clear-completed:hover {
+   color: hsl(234, 39%, 85%);
+}
+
+@keyframes todo-appear {
+   from {
+      opacity: 0;
+      transform: translateY(3rem);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+
+@media (max-width: 35rem) {
+
+   .actions {
+      justify-content: space-between;
+      height: 60px;
+   }
+
+   .actions .filter {
+      display: none;
+   }
+
+   .filter.mobile {
+      display: flex;
+      margin-top: 20px;
+      justify-content: center;
+      font-size: 16px;
+   }
+
+   .filter.mobile p:not(:last-child) {
+      padding-right: 30px;
+   }
+}

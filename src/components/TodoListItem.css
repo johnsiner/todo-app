@@ -1,0 +1,73 @@
+.list-item {
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   padding-inline: 20px;
+   height: 60px;
+   border-bottom: solid 1px hsl(233, 11%, 84%);
+}
+
+#dark .list-item {
+   border-bottom: solid 1px hsl(233, 14%, 35%);
+}
+
+.list-item:hover {
+   cursor: pointer;
+}
+
+.list-item:hover .cross-icon {
+   display: block;
+}
+
+.checkbox {
+   display: flex;
+   height: 25px;
+   aspect-ratio: 1;
+   border-radius: 50%;
+   border: 1px solid hsl(233, 11%, 84%);
+   margin-right: 20px;
+}
+
+.checkbox:hover {
+   border: 1px solid hsl(220, 98%, 61%);
+}
+
+#dark .checkbox {
+   border: 1px solid hsl(233, 14%, 35%);
+}
+
+.checkbox.completed {
+   background-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.checkbox.completed .check-icon {
+   display: block;
+}
+
+.checkbox .check-icon {
+   margin: auto;
+   display: none;
+}
+
+
+.list-item p {
+   color: hsl(235, 19%, 35%);
+}
+
+.list-item p.completed {
+   color: hsl(233, 11%, 84%);
+   text-decoration: line-through;
+}
+
+#dark .list-item p {
+   color: hsl(234, 39%, 85%);
+}
+
+#dark .list-item p.completed {
+   color: hsl(233, 14%, 35%);
+}
+
+.cross-icon {
+   display: none;
+   margin-left: auto;
+}
