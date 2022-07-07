@@ -30,7 +30,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./src/images/web-capture-desktop.png)
+![](./src/images/web-capture-mobile-dark.png)
+![](./src/images/web-capture-mobile-light.png)
 
 ### Links
 
