@@ -86,7 +86,9 @@ export default function TodoBody(props) {
                </Droppable>
             </DragDropContext>
             <div className="actions">
-               <p className="items-left">{`${uncompleteListItems.length} items left`}</p>
+               <p className="items-left">{`${uncompleteListItems.length} item${
+                  uncompleteListItems.length > 1 ? 's' : ''
+               } left`}</p>
                <div className="filter">
                   <p
                      onClick={() => setFilter('all')}
