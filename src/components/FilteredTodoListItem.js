@@ -4,17 +4,11 @@ import checkIcon from '../images/icon-check.svg';
 import crossIcon from '../images/icon-cross.svg';
 import AppContext from '../store/AppContext';
 
-const TodoListItem = React.forwardRef((props, ref) => {
-   const { task, completed, id, provided } = props;
+export default function FilteredTodoListItem(props) {
+   const { task, completed, id } = props;
    const { todoCompleted, deleteTodoItem } = useContext(AppContext);
-
    return (
-      <li
-         ref={ref}
-         {...provided.draggableProps}
-         {...provided.dragHandleProps}
-         className="list-item"
-      >
+      <li className="list-item">
          <div
             className={`checkbox ${completed ? 'completed' : ''}`}
             onClick={() => todoCompleted(id)}
@@ -31,6 +25,4 @@ const TodoListItem = React.forwardRef((props, ref) => {
          </div>
       </li>
    );
-});
-
-export default TodoListItem;
+}

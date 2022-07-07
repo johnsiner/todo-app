@@ -1,7 +1,7 @@
 .todo-body {
    margin-top: 25px;
    border-radius: 5px;
-   animation: todo-appear 1s ease-out forwards;
+   /* animation: todo-appear 1s ease-out forwards; */
 }
 
 .mobile.filter {
@@ -11,14 +11,13 @@
 .todo-list {
    padding: 0;
    margin: 0;
-   border-radius: 5px;
 }
 
 .actions {
    display: flex;
    height: 50px;
    font-size: 13px;
-   color: hsl(233, 11%, 84%);
+   color: hsl(236, 9%, 61%);
    justify-content: space-between;
    align-items: center;
    padding-inline: 20px;

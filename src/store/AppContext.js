@@ -7,6 +7,8 @@ const AppContext = createContext({
    deleteTodoItem: () => {},
    todoCompleted: () => {},
    clearCompleted: () => {},
+   reorderTodoList: () => {},
+   setFilter: () => {},
 });
 
 export default AppContext;

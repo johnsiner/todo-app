@@ -39,6 +39,16 @@
   padding-top: 70px;
 }
 
+.footer-text {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: hsl(236, 9%, 61%);
+}
+
+#dark .footer-text {
+  color: hsl(233, 14%, 35%);
+}
 
 @media (max-width: 35rem) {
 

@@ -52,6 +52,13 @@ const appReducer = (state, action) => {
          localStorage.setItem('todoList', JSON.stringify(updatedTodoList));
          return { ...state, todoList: updatedTodoList };
       }
+      case 'REORDER_TODOLIST': {
+         const updatedTodoList = action.todoList;
+         localStorage.setItem('todoList', JSON.stringify(action.todoList));
+         return { ...state, todoList: updatedTodoList };
+      }
+      case 'SET_FILTER':
+         return { ...state, filter: action.filter };
       default:
          return state;
    }
@@ -60,6 +67,7 @@ const appReducer = (state, action) => {
 const AppContextProvider = (props) => {
    const defaultAppState = {
       theme: useThemeDetector() ? 'dark' : 'light',
+      filter: 'all',
       todoList: localStorage.getItem('todoList')
          ? JSON.parse(localStorage.getItem('todoList'))
          : [],
@@ -73,7 +81,7 @@ const AppContextProvider = (props) => {
    const addTodoItem = (todo) => {
       dispatchAction({
          type: 'ADD_TODO_ITEM',
-         payload: { task: todo, id: Date.now(), completed: false },
+         payload: { task: todo, id: Date.now().toString(), completed: false },
       });
    };
 
@@ -89,6 +97,14 @@ const AppContextProvider = (props) => {
       dispatchAction({ type: 'CLEAR_COMPLETED' });
    };
 
+   const reorderTodoList = (todoList) => {
+      dispatchAction({ type: 'REORDER_TODOLIST', todoList });
+   };
+
+   const setFilter = (filter) => {
+      dispatchAction({ type: 'SET_FILTER', filter });
+   };
+
    const appContext = {
       appState,
       toggleTheme,
@@ -96,6 +112,8 @@ const AppContextProvider = (props) => {
       deleteTodoItem,
       todoCompleted,
       clearCompleted,
+      reorderTodoList,
+      setFilter,
    };
 
    return (

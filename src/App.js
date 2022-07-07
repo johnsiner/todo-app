@@ -6,15 +6,20 @@ import TodoBody from './components/TodoBody';
 import AppContext from './store/AppContext';
 
 function App() {
-   const appCtx = useContext(AppContext);
+   const {
+      appState: { theme, filter },
+   } = useContext(AppContext);
 
    return (
-      <div className="app" id={appCtx.appState.theme}>
+      <div className="app" id={theme}>
          <div className="bg-image"></div>
          <div className="container">
             <Header />
             <Input />
             <TodoBody />
+            {filter === 'all' && (
+               <p className="footer-text">Drag and drop to reorder list</p>
+            )}
          </div>
       </div>
    );

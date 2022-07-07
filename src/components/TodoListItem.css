@@ -1,11 +1,12 @@
 .list-item {
    display: flex;
-   align-items: center;
    text-decoration: none;
-   padding-inline: 20px;
    height: 60px;
    border-bottom: solid 1px hsl(233, 11%, 84%);
+   padding-inline: 20px;
+   align-items: center;
 }
+
 
 #dark .list-item {
    border-bottom: solid 1px hsl(233, 14%, 35%);
@@ -28,12 +29,16 @@
    margin-right: 20px;
 }
 
-.checkbox:hover {
+#dark .checkbox {
+   border: 1px solid hsl(233, 14%, 35%);
+}
+
+#dark .checkbox:hover {
    border: 1px solid hsl(220, 98%, 61%);
 }
 
-#dark .checkbox {
-   border: 1px solid hsl(233, 14%, 35%);
+.checkbox:hover {
+   border: 1px solid hsl(220, 98%, 61%);
 }
 
 .checkbox.completed {

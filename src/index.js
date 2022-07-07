@@ -1,17 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppContextProvider from './store/AppContextProvider';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-   <React.StrictMode>
-      <AppContextProvider>
-         <App />
-      </AppContextProvider>
-   </React.StrictMode>
+import { render } from 'react-dom';
+const root = document.getElementById('root');
+render(
+   <AppContextProvider>
+      <App />
+   </AppContextProvider>,
+   root
 );
 
 // If you want to start measuring performance in your app, pass a function
