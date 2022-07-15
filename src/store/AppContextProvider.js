@@ -39,7 +39,8 @@ const appReducer = (state, action) => {
             (todo) => todo.id === action.id
          );
          const completedItem = state.todoList[completedItemIndex];
-         const updatedItem = { ...completedItem, completed: true };
+         const iscompleted = completedItem.completed;
+         const updatedItem = { ...completedItem, completed: !iscompleted };
          const updatedTodoList = [...state.todoList];
          updatedTodoList[completedItemIndex] = updatedItem;
          localStorage.setItem('todoList', JSON.stringify(updatedTodoList));
